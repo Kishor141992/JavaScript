@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ajax</title>
+  <link rel="stylesheet" href="./xlib/styles.css">
+</head>
+
+<body>
+  <h1>Ajax</h1>
+  <input type="text" id="usrId" placeholder="Enter user id">
+  <button onclick="getProfile()">Get Profile</button>
+  <img id="image" src="" alt="image not found " ></img><br>
+  <div id="division">
+    <table id="t1">
+      <tr>
+        <th>First Name:</th>
+        <td class="row" id="firstName"></td>
+      </tr>
+      <tr>
+        <th>Last Name:</th>
+        <td class="row" id="lastName"></td>
+      </tr>
+      <tr>
+        <th>Email:</th>
+        <td class="row" id="eMail"></td>
+      </tr>
+    </table><br>
+  </div>
+
+
+  <script src="./xlib/jquery-3.4.1.min.js"></script>
+
+
+  <script>
+    function getProfile() {
+      console.log($('#usrId').val())
+      var apiUrl = 'https://reqres.in/api/users/' + document.getElementById('usrId').value;
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange= function() {
+        if(xhttp.readyState ==4 && xhttp.status == 200){
+          var usrData = JSON.parse(xhttp.response);
+          console.log(usrData.data)
+          $('#image').attr('src',usrData.data.avatar);
+          $('#firstName').text(usrData.data.first_name);
+          $('#lastName').text(usrData.data.last_name);
+          $('#eMail').text(usrData.data.email);
+        }
+      };
+
+      xhttp.open('GET', apiUrl);
+      xhttp.send();
+
+
+    }
+  </script>
+</body>
+
+</html>

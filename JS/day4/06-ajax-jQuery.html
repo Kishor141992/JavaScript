@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ajax Jquery</title>
+</head>
+<body>
+  <h1>Ajax Jquery</h1>
+  <input type="text" id="usrId" placeholder="Enter user id">
+  <button onclick="getProfile()">Get Profile</button>
+  <hr>
+  <img id="image" src="" alt="image not found " ></img>
+  <div>
+    <span id="firstName"></span>
+    <span id="lastName"></span>
+  </div>
+  <span id="eMail"></span>
+  <script src="./xlib/jquery-3.4.1.min.js"></script>
+  <script>
+
+    function getProfile(){
+      var apiUrl = 'https://reqres.in/api/users/' + $('#usrId').val();
+      console.log(apiUrl)
+      $.ajax({
+        url: apiUrl,
+        success: function (responseData, textStatus, jQXHR) {
+          $('#image').attr('src',responseData.data.avatar);
+          $('#firstName').text(responseData.data.first_name);
+          $('#lastName').text(responseData.data.last_name);
+          $('#eMail').text(responseData.data.email);
+        }, error(){
+          console.log('Error occured')
+        }
+      });
+    }
+
+
+
+  </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,3 @@
+app.name = Mon profil
+
+welcome.msg = Bienvenue dans mon monde

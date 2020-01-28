@@ -1,0 +1,23 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <form id="formProfile">
+      <div>
+        <input id="id" type="hidden" name="pid" value="{{id}}">
+        <span>First Name</span>
+        <span><input id="nameFirst" type="text" name="name.first" value="{{firstName}}"></span>
+      </div>
+      <div>
+        <span>Last Name</span>
+        <span><input id="nameLast" type="text" name="name.last" value="{{lastName}}"></span>
+      </div>
+      <div>
+        <span>Email</span>
+        <span><input id="email" type="text" name="email" value="{{email}}"></span>
+      </div>
+    </form>
+    <hr>
+
+    <a href="#" class="btn btn-primary" onclick="{$}saveProfile()">Save</a>
+
+  </div>
+</div>

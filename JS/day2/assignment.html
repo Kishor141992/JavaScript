@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Assignment</title>
+</head>
+
+<body>
+  <script>
+    function checkType(input, expr) {
+      var exprArray = expr.split('|'),
+          inputType = Object.prototype.toString.call(input).slice(8,-1);
+      console.log('inputType is ', inputType);
+
+      for (var i = 0; i < exprArray.length; i++) {
+        if (exprArray[i] == inputType.toLowerCase()) {
+          console.log('type of object is ', inputType);
+          return true;
+        }
+      }
+      return false;
+    }
+
+    checkType("https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg", 'string|number');
+  </script>
+</body>
+
+</html>

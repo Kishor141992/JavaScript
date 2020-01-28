@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Profile</title>
+  <link rel="stylesheet" href="./xlib/styles.css">
+</head>
+
+<body>
+  <h1 class="center">Profile</h1>
+
+    <img id="image" src="./xlib/image/Virat-Kohli.jpg" alt="image not found " ></img><br>
+    <div id="div">
+      <span><strong>Name:</strong></span>
+      <span id="name">Virat Kohli</span><br>
+      <span><strong>Nickname:</strong></span>
+      <span id="nickName"> Cheeku, King </span><br>
+      <span><strong>Birth Place:</strong></span>
+      <span id="birthPlace">Delhi</span><br>
+      <span><strong>Role:</strong></span>
+      <span id="role"> Batsman</span><br>
+      <button type="button" onclick="updateDetailsToRahul()"> Rahul </button>
+      <button type="button" onclick="updateDetailsToDhoni()"> Dhoni </button>
+      <button type="button" onclick="location.reload()">Refresh</button>
+    </div>
+
+    <script>
+      var rahulDetails = {
+        name : 'Lokesh Rahul',
+        nickName :'KL',
+        birthPlace : 'Manglore',
+        role : 'WK-Batsman',
+        photo :'./xlib/image/Rahul.jpg'
+      }
+
+      var dhoniDetails = {
+        name : 'Mahendra Singh Dhoni',
+        nickName :'Mahi, Captain Cool',
+        birthPlace : 'Ranchi',
+        role : 'Finisher',
+        photo :'./xlib/image/Dhoni.jpg'
+      }
+
+      function updateDetailsToRahul(){
+        $('#image').attr('src',rahulDetails.photo);
+        $('#name').text(rahulDetails.name);
+        $('#nickName').text(rahulDetails.nickName);
+        $('#birthPlace').text(rahulDetails.birthPlace);
+        $('#role').text(rahulDetails.role);
+      }
+
+      function updateDetailsToDhoni(){
+        $('#image').attr('src',dhoniDetails.photo);
+        $('#name').text(dhoniDetails.name);
+        $('#nickName').text(dhoniDetails.nickName);
+        $('#birthPlace').text(dhoniDetails.birthPlace);
+        $('#role').text(dhoniDetails.role);
+      }
+
+
+    </script>
+
+<script src="./xlib/jquery-3.4.1.min.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promise & Arrow</title>
+</head>
+<body>
+  <h1>Promise & Arrow</h1>
+  <script>
+
+    var doSomething = new Promise(function(resolve, reject){
+      var state = 0;
+
+      setTimeout(function(){
+        if (state){
+          resolve('onSuccess');
+        }else{
+          reject('onFailure');
+        }
+      }, 5000);
+
+
+    });
+
+    //in this normal function call you will get arguments and this
+    doSomething.then(function(message){
+      console.log('normal function arguments', arguments);
+      console.log('normal function parameters', message);
+      return 'first then' + message;
+    }).then(function(secondthen){
+      console.log('second then ', secondthen);
+    }).catch(function(arguments){
+      console.log('normal function arguments', arguments);
+    });
+
+
+     //in this arrow function call you will not get arguments and this
+    // doSomething.then((message) =>{
+    //   console.log('arrow function parameters', message);
+    //   // 01-promise_arrow.html:32 Uncaught (in promise) ReferenceError: arguments is not defined  at 01-promise_arrow.html:33
+    //   console.log('arrow function arguments', arguments);
+    // }).then(function(secondthen){
+    //   console.log('second then ', secondthen);
+    // }).catch(function(arguments){
+    //   console.log('normal function arguments', arguments);
+    // });
+
+    console.log('start')
+
+
+  </script>
+
+
+</body>
+</html>

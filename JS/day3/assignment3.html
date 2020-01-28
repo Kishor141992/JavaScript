@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Profile</title>
+  <link rel="stylesheet" href="./xlib/styles.css">
+</head>
+
+<body onload="updateDetails(kohliDetails)">
+  <h1 class="heading">Profile</h1>
+    <img id="image" src="" alt="image not found " ></img><br>
+    <div id="division">
+      <table id="t1">
+        <tr>
+          <th>Name:</th>
+          <td class="row" id="name"></td>
+        </tr>
+        <tr>
+          <th>Nickname:</th>
+          <td class="row" id="nickName"></td>
+        </tr>
+        <tr>
+          <th>Birth Place:</th>
+          <td class="row" id="birthPlace"></td>
+        </tr>
+        <tr>
+          <th>Role:</th>
+          <td class="row" id="role"></td>
+        </tr>
+      </table><br>
+      <button id="button1" type="button" onclick="updateDetails(rahulDetails)"> Rahul </button>
+      <button id="button2" type="button" onclick="updateDetails(dhoniDetails)"> Dhoni </button>
+      <button id="button3" type="button" onclick="updateDetails(kohliDetails)"> Kohli </button>
+    </div>
+
+    <script>
+
+      var kohliDetails = {
+        name : 'Virat Kohli',
+        nickName :'Cheeku, King',
+        birthPlace : 'Delhi',
+        role : 'Batsman',
+        photo :'./xlib/image/Virat-Kohli.jpg'
+      }
+
+      var rahulDetails = {
+        name : 'Lokesh Rahul',
+        nickName :'KL',
+        birthPlace : 'Manglore',
+        role : 'WK-Batsman',
+        photo :'./xlib/image/KL-Rahul.png'
+      }
+
+      var dhoniDetails = {
+        name : 'Mahendra Singh Dhoni',
+        nickName :'Mahi, Captain Cool',
+        birthPlace : 'Ranchi',
+        role : 'Finisher',
+        photo :'./xlib/image/msd.jpg'
+      }
+
+      function updateDetails(profile){
+        $('#image').attr('src',profile.photo);
+        $('#name').text(profile.name);
+        $('#nickName').text(profile.nickName);
+        $('#birthPlace').text(profile.birthPlace);
+        $('#role').text(profile.role);
+      }
+
+    </script>
+
+<script src="./xlib/jquery-3.4.1.min.js"></script>
+
+
+</body>
+
+</html>

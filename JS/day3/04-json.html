@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JSON</title>
+</head>
+<body>
+  <h1>JSON-Java Script Object Notation</h1>
+  <span>JSON can't take functions</span>
+  <script>
+
+  var kishor ={
+    name : 'A KISHOR S',
+    age : 27,
+    fly:function(){
+      console.log('flying');
+    }
+  }
+
+  console.log( kishor);
+  console.log(JSON.stringify(kishor));
+
+  var rahul = '{"name":"RAHUL","age":29}';
+  console.log( rahul);
+  console.log(JSON.parse(rahul));
+
+  </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Function</title>
+</head>
+<body>
+  <h1>Function</h1>
+  <script>
+
+    function doSomething(name, age){
+      console.log('doing something with...', arguments);
+    }
+
+    //doSomething('js', 20);
+    //doSomething.call(undefined, 'js', 20);
+
+    var params = ['Hi', 40];
+
+    doSomething.apply(undefined, params);
+
+
+
+
+  </script>
+
+</body>
+</html>

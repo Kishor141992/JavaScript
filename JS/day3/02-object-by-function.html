@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Object by Function</title>
+</head>
+<body>
+  <h1>Object by Function</h1>
+  <script>
+
+/////
+  function Person(fullName,age){
+    this.name = fullName;
+    this.age = age;
+    this.smile = function(){
+      console.log('smiling ...')
+    }
+  }
+  var kishor = new Person('A Kishor S', 27);
+  kishor.drivingLicense = '123456';
+  console.log(kishor);
+
+  var rahul = new Person('A Rahul', 29);
+  rahul.smile = function(){
+      console.log('lol ...')
+    }
+  console.log(rahul);
+  ///////
+
+  function Person(fullName,age){
+    this.name = fullName;
+    this.age = age;
+  }
+  Person.prototype.smile =  function(){
+    console.log('smiling ...')
+  }
+
+  var kishor = new Person('A Kishor S', 27);
+  kishor.drivingLicense = '123456';
+  console.log(kishor);
+
+  var rahul = new Person('A Rahul', 29);
+
+  rahul.smile = function(){
+      console.log('lol ...')
+    }
+  console.log(rahul);
+
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Events2</title>
+</head>
+<body>
+  <h1>Events2</h1>
+
+  <button class="button" id="btn1" onclick="doSomething(this)">Click</button>
+  <button class="button" id="btn2" onclick="doSomething(this)">Click</button>
+
+  <script>
+
+    function doSomething(srcEl){
+      console.log('doing something', srcEl.classNAme);
+      console.log('doing something', srcEl.id);
+    }
+
+
+
+  </script>
+</body>
+</html>

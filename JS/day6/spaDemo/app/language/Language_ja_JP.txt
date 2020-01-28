@@ -1,0 +1,2 @@
+app.name = 私のプロフィール
+welcome.msg = 私の世界へようこそ

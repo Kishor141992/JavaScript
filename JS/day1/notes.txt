@@ -1,0 +1,2 @@
+Basic of Html,CSS(inline and external) Tags, Introduction to JS(compiler, interpretur)
+Assignment: write a resume using basic HTML with tags and css

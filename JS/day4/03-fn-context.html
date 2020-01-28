@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fn Context</title>
+</head>
+<body>
+  <h1> Fn Context</h1>
+
+  <script>
+
+    function stdSmile(){
+      console.log(this.name, ' is smiling');
+    }
+
+    function stdSmiling(type){
+      console.log(this.name, ' is smiling ', type);
+    }
+
+    var kishor ={
+      name:'A KISHOR S',
+      email:'kishor@gmail.com'
+    }
+    kishor.smile = stdSmile;
+
+
+    var rahul ={
+      name:'K Rahul',
+      email:'kishor@gmail.com'
+    }
+    rahul.smile = stdSmile;
+
+    var sachin ={
+      name:'sachin ',
+      email:'kishor@gmail.com'
+    }
+
+    console.log(rahul.smile());
+    console.log(kishor.smile());
+    console.log(stdSmile.call(sachin));
+    console.log(stdSmiling.call(sachin, 'ROFL'));
+
+
+  </script>
+</body>
+</html>

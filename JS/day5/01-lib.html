@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Utils Lib</title>
+</head>
+
+<body>
+  <h1>Utils Lib</h1>
+
+  <script>
+    (function(glb){
+
+      function _realType(x){}
+      function _isString(x){}
+      function _isNumber(x){}
+      function _isType(x, typeListStr){}
+
+      var typeUtils = {
+        realType: _realType,
+        isString: _isString,
+        isNumber:_isNumber,
+        isType  : _isType
+      }
+
+      if(glb.$type){
+        console.log('$type is already used');
+      }else{
+        glb.$type = typeUtils;
+      }
+
+    })(this);
+
+
+    if ($type.isString(x) ||  $type.isNumber(x)) {
+
+    }
+
+    if($type.isType(x, 'string|number')) {
+
+    }
+  </script>
+</body>
+
+</html>

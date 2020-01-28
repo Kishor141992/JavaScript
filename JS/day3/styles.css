@@ -1,0 +1,29 @@
+.heading {
+text-align-last: center;
+}
+
+.name {
+  font-weight: bold;
+  font-size:x-large;
+}
+
+.subtitle {
+  background-color: rgb(153, 157, 161);
+}
+
+.list {
+  line-height: 170%;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.paraHeading{
+  font-style:initial;
+  font-size: x-large;
+}
+
+.resp{
+  font-size: large;
+}

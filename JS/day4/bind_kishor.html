@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ajax - jQuery</title>
+</head>
+<body>
+  <input type="text" value="1" id="usrId" placeholder="Enter User Id">
+  <button onclick="getProfile()">Get Profile</button>
+  <hr>
+  <div>
+    <img id="avatar" src="" alt="Avatar">
+    <!-- <div id="containerProfile">
+      <span id="first_name"></span>
+      <span id="last_name"></span>
+    </div> -->
+    <span id="email"></span><br>
+  </div>
+
+  <script>
+    function getProfile() {
+      var apiUrl = 'https://reqres.in/api/users/' + $('#usrId').val();
+
+      $.ajax({url: apiUrl}).done(_success).fail(_error).always(_always);
+
+      function _success( apiData, textStatus, jQXHR ){
+        bindData(apiData.data);
+      }
+
+      function bindData(data) {
+        var id;
+        console.log(data)
+        for (key in data) {
+          id = '#' + key;
+          //if (typeof (data[key]) == 'string' && data[key].match('jpg')) {
+          if (key == 'avatar') {
+            $(id).attr('src', data[key]);
+          } else {
+            $(id).text(data[key]);
+          }
+        }
+      }
+
+      function _error(){
+        console.log(this, arguments);
+      }
+
+      function _always(){
+        console.log('You got it.');
+      }
+
+    }
+  </script>
+
+<script src="xlib/jquery-3.4.1.min.js"></script>
+
+
+</body>
+</html>
